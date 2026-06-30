@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RAG PDF Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <main class="app">
+      <header class="header">
+        <div>
+          <p class="eyebrow">RAG PDF Console</p>
+          <h1>Ask your PDFs</h1>
+          <p class="subtitle">Hybrid search + Mistral answers with citations and evidence checks.</p>
+        </div>
+        <div class="status" id="status">Idle</div>
+      </header>
+
+      <section class="panel">
+        <div class="upload">
+          <label class="upload-label" for="pdf-input">Upload PDFs</label>
+          <input id="pdf-input" type="file" accept="application/pdf" multiple />
+          <button id="upload-btn">Ingest</button>
+          <div class="upload-meta" id="upload-meta">No files selected.</div>
+        </div>
+
+        <div class="chat" id="chat"></div>
+
+        <form class="composer" id="composer">
+          <input
+            id="question"
+            type="text"
+            placeholder="Ask a question about the ingested PDFs..."
+            autocomplete="off"
+          />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
