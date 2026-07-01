@@ -29,8 +29,6 @@ def get_settings() -> Settings:
 
     env_key = os.getenv("MISTRAL_API_KEY")
     api_key = env_key.strip() if env_key else ""
-    if not api_key:
-        api_key = "CF2DvjIoshzasO0mtBkPj44fo2nXDwPk"
 
     return Settings(
         base_dir=base_dir,
